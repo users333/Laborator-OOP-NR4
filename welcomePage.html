@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Website - Bun venit!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="container">
+
+        <div id="welcomePage" class="centered">
+            <h1>Bun venit!</h1>
+            <p>Bine ai venit pe ghidul nostru. Te rugăm să te loghezi sau să te înregistrezi.</p>
+            <button id="loginButton" class="btn">Logare</button>
+            <button id="registerButton" class="btn">Înregistrare</button>
+        </div>
+
+        <div id="loginPage" style="display: none;">
+            <h2>Logare</h2>
+            <form action="login.php" method="post">
+                <label for="username">Username:</label><br>
+                <input type="text" id="usernameInput" name="username" required style="display: none;"><br>
+                <label for="password">Parolă:</label><br>
+                <input type="password" id="passwordInput" name="password" required style="display: none;"><br><br>
+                <button type="submit" name="login" class="btn">Logare</button>
+            </form>
+            <div id="resetPasswordButton">
+                <button onclick="redirectToResetPasswordPage()" class="btn">Resetare Parolă</button>
+            </div>
+        </div>
+
+        <div id="registerPage" style="display: none;">
+            <h2>Înregistrare</h2>
+            <form action="register.php" method="post">
+                <label for="newUsername">Username:</label><br>
+                <input type="text" id="newUsername" name="newUsername" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="newPassword">Parolă:</label><br>
+                <input type="password" id="newPassword" name="newPassword" required><br><br>
+                <button type="submit" name="register" class="btn">Înregistrare</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function showLoginPage() {
+            document.getElementById("welcomePage").style.display = "none";
+            document.getElementById("loginPage").style.display = "block";
+            document.getElementById("usernameInput").style.display = "block";
+            document.getElementById("passwordInput").style.display = "block";
+        }
+
+        function showRegisterPage() {
+            document.getElementById("welcomePage").style.display = "none";
+            document.getElementById("registerPage").style.display = "block";
+            document.getElementById("newUsername").style.display = "block";
+            document.getElementById("email").style.display = "block";
+            document.getElementById("newPassword").style.display = "block";
+        }
+
+        function resetPages() {
+            document.getElementById("welcomePage").style.display = "block";
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("registerPage").style.display = "none";
+            document.getElementById("usernameInput").style.display = "none";
+            document.getElementById("passwordInput").style.display = "none";
+            document.getElementById("newUsername").style.display = "none";
+            document.getElementById("email").style.display = "none";
+            document.getElementById("newPassword").style.display = "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("loginButton").addEventListener("click", showLoginPage);
+            document.getElementById("registerButton").addEventListener("click", showRegisterPage);
+        });
+
+        function logout() {
+            resetPages();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #423b3b;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Modificăm aici alinierea pe axa verticală */
+    min-height: 100vh; /* Folosim min-height pentru a asigura că întreaga pagină este acoperită */
+    animation: fadeIn 1s ease-in-out; /* Animatie de estompare la afișare */
+}
+
+#container {
+    max-width: 800px;
+    padding: 50px;
+    background-color: #dce6e5;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    margin-top: 20vh; /* Ajustăm margin-top pentru a poziționa containerul mai sus */
+}
+
+.centered {
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+.btn {
+    background-color: #100014;
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; 
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.btn-reset-password {
+    background-color: #ff0000;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-reset-password:hover {
+    background-color: #cc0000;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+p {
+    color: #666;
+    text-align: center
+}
